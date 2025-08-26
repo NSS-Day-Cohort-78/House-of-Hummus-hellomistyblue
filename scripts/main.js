@@ -17,15 +17,17 @@ export const FoodTruck = async () => {
             <img src="./images/hummus.png" class="logo" />
             <h1 class="title">Laura Kathryn's House of Hummus</h1>
         </header>
-        <section>
-            ${entreesHTML}
-        </section>
-        <section>
-            ${vegetablesHTML}
-        </section>
-        <section>
-            ${sidesHTML}
-        </section>
+        <div class="choices">
+            <section class="options">
+                ${entreesHTML}
+            </section>
+            <section class="options">
+                ${vegetablesHTML}
+            </section>
+            <section class="options">
+                ${sidesHTML}
+            </section>
+        </div>
         <article>
             ${purchaseComboHTML}
         </article>
@@ -44,6 +46,8 @@ const mainContainer = document.querySelector("#container")
 const renderAllHTML = async () => {
     mainContainer.innerHTML = await FoodTruck()
 }
+
+document.addEventListener("newPurchaseCreated", renderAllHTML)
 
 renderAllHTML()
 

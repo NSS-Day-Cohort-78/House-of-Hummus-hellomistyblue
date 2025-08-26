@@ -6,7 +6,7 @@ export const Purchases = async () => {
     `
     const divStringArray = purchases.map(
         (purchasesObject) => {
-            return `<p>Receipt #${purchasesObject.id} - $${purchasesObject.total}</p>`
+            return `<p>Receipt #${purchasesObject.id} - $${parseFloat(purchasesObject.total).toFixed(2)}</p>`
         } 
     )
     purchasesHTML += divStringArray.join("")

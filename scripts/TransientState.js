@@ -36,6 +36,9 @@ export const savePurchase = async () => {
     }
     const response = await fetch("http://localhost:8088/purchases", postOptions)
 
+    const newPurchaseEvent = new CustomEvent("newPurchaseCreated")
+    document.dispatchEvent(newPurchaseEvent)
+
     }
     else {
         window.alert(`Please choose at least one option to submit order`)
