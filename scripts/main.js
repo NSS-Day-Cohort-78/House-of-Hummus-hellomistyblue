@@ -1,16 +1,15 @@
-import { Purchases } from "./Purchases.js"
 import { Entrees } from "./Entrees.js"
 import { Vegetables } from "./Vegetables.js"
 import { SideDishes } from "./SideDishes.js"
 import { PurchaseCombo } from "./PurchaseButton.js"
+import { Purchases } from "./Purchases.js"
 
-export const FoodTruck = async () => {
-    const purchasesHTML = await Purchases()
+export const App = async () => {
     const entreesHTML = await Entrees()
     const vegetablesHTML = await Vegetables()
     const sidesHTML = await SideDishes()
     const purchaseComboHTML = PurchaseCombo()
-
+    const purchasesHTML = await Purchases()
 
     return `
         <header class="header">
@@ -44,7 +43,7 @@ export const FoodTruck = async () => {
 const mainContainer = document.querySelector("#container")
 
 const renderAllHTML = async () => {
-    mainContainer.innerHTML = await FoodTruck()
+    mainContainer.innerHTML = await App()
 }
 
 document.addEventListener("newPurchaseCreated", renderAllHTML)

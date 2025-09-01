@@ -5,8 +5,6 @@ export const transientState = {
     vegetablePrice: 0,
     sideDishPrice: 0
 }
-//console.log(transientState)
-
 
 // setter functions, one for each price - listen for change on inputs and update transient state
 
@@ -25,7 +23,7 @@ export const setSideDishPrice = (price) => {
 export const savePurchase = async () => {
     if (transientState.entreePrice > 0 || transientState.vegetablePrice > 0 || transientState.sideDishPrice > 0) {
 
-    const calculatedTotal = transientState.entreePrice + transientState.vegetablePrice + transientState.sideDishPrice 
+        const calculatedTotal = transientState.entreePrice + transientState.vegetablePrice + transientState.sideDishPrice 
         
     const postOptions = {
         method: "POST",
@@ -43,6 +41,4 @@ export const savePurchase = async () => {
     else {
         window.alert(`Please choose at least one option to submit order`)
     }
-    
-
 }

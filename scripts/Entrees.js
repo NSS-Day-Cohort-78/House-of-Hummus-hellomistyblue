@@ -8,7 +8,7 @@ const handleInputChange = (changeEvent) => {
 }
 
 export const Entrees = async () => {
-    document.addEventListener("change", handleInputChange)
+document.addEventListener("change", handleInputChange)    
     const entrees = await fetch("http://localhost:8088/entrees").then(res => res.json())
 
     let html = `
